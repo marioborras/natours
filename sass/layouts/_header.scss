@@ -8,6 +8,7 @@
   background-size: cover; /* whatever the width of the element always will try to fit it inside the element*/
   background-position: top;
   position: relative;
+  -webkit-clip-path: polygon(0 0,100% 0,100% 75vh, 0 100%);
   clip-path: polygon(0 0,100% 0,100% 75vh, 0 100%); /* to change the shape of the header with diagnal clipped off*/
 
   &__logo-box {
