@@ -1,19 +1,37 @@
 .row {
   max-width: $grid-width;
   margin: 0 auto;
+
+  
   
  
 
   &:not(:last-child){ //gives this to every element that isn't the last child.
     margin-bottom: $gutter-vertical;
+
+    @include respond(tab-port) {
+      margin-bottom: $gutter-vertical-small;
+    }
    
   }
+
+  @include respond(tab-port) {
+    max-width: 50rem;
+    padding: 0 3rem;
+
+  }
+
   @include clearfix;
   [class^="col-"] {
     float: left;
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+    }
+    @include respond(tab-port) {
+      width: 100% !important;
+      margin-right: 0;
+      margin-bottom: $gutter-vertical-small;
     }
   }
   .col-1-of-2 {

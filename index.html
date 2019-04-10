@@ -3,16 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link
       href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
       rel="stylesheet"
     />
-
-    <link rel="stylesheet" href="css/icon-font.css" />
+    <!-- <link rel="stylesheet" href="css/icon-font.css" /> -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-
     <title>Natours | Exciting tours for adventurous people</title>
   </head>
   <body>
@@ -85,19 +82,25 @@
           <div class="col-1-of-2">
             <div class="composition">
               <img
-                src="/img/nat-1-large.jpg"
+                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                sizes="(max-width:56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                 alt="photo 1"
                 class="composition__photo composition__photo--p1"
+                source="img/nat-1."
               />
               <img
-                src="/img/nat-2-large.jpg"
+                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                sizes="(max-width:56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                 alt="photo 2"
                 class="composition__photo composition__photo--p2"
+                source="img/nat-2."
               />
               <img
-                src="/img/nat-3-large.jpg"
+                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                sizes="(max-width:56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                 alt="photo 3"
                 class="composition__photo composition__photo--p3"
+                source="img/nat-3."
               />
             </div>
           </div>
@@ -366,30 +369,42 @@
     </main>
     <footer class="footer">
       <div class="footer__logo-box">
-        <img src="img/logo-green-2x.png" alt="Full logo" class="footer__logo" />
-        <div class="row">
-          <div class="col-1-of-2">
-            <div class="footer__navigation">
-              <ul class="footer__list">
-                <li class="footer__item"><a href="#" class="footer__link">Company</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Contact us</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Careers</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">privacy policy</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Terms</a></li>
-              </ul>
-            </div>
+        <picture class="footer__logo">
+          <!-- Lecture 62  on Responsive Images in HTML -->
+          <source
+            srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x"
+            media="(max-width: 37.5em)"
+          />
+          <img
+            srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
+            alt="Full logo"
+            class="footer__logo"
+            src="img//logo-green-2x.png"
+          />
+        </picture>
+      </div>
+      <div class="row">
+        <div class="col-1-of-2">
+          <div class="footer__navigation">
+            <ul class="footer__list">
+              <li class="footer__item"><a href="#" class="footer__link">Company</a></li>
+              <li class="footer__item"><a href="#" class="footer__link">Contact us</a></li>
+              <li class="footer__item"><a href="#" class="footer__link">Careers</a></li>
+              <li class="footer__item"><a href="#" class="footer__link">privacy policy</a></li>
+              <li class="footer__item"><a href="#" class="footer__link">Terms</a></li>
+            </ul>
           </div>
-          <div class="col-1-of-2">
-            <p class="footer__copyright">
-              Built by <a href="" class="footer__link">John Smith</a> for his only course
-              <a href="" class="__footer__link"></a>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita quia totam natus
-              cumque distinctio quos impedit quam sequi veritatis, ducimus doloremque quod itaque
-              porro eveniet ex soluta quaerat suscipit iure? Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Soluta quo incidunt porro quae ipsa ut aliquid in iusto iste
-              laudantium eaque corrupti, nulla sequi earum harum enim. Delectus, magnam reiciendis!
-            </p>
-          </div>
+        </div>
+        <div class="col-1-of-2">
+          <p class="footer__copyright">
+            Built by <a href="" class="footer__link">John Smith</a> for his only course
+            <a href="" class="__footer__link"></a>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita quia totam natus
+            cumque distinctio quos impedit quam sequi veritatis, ducimus doloremque quod itaque
+            porro eveniet ex soluta quaerat suscipit iure? Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Soluta quo incidunt porro quae ipsa ut aliquid in iusto iste
+            laudantium eaque corrupti, nulla sequi earum harum enim. Delectus, magnam reiciendis!
+          </p>
         </div>
       </div>
     </footer>
@@ -416,70 +431,5 @@
         </div>
       </div>
     </div>
-    <!--  
-    <section class="grid-test">
-      <div class="row">
-        <div class="col-1-of-2">
-          col 1 of 2
-        </div>
-        <div class="col-1-of-2">
-          col 1 of 2
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-1-of-3">
-          col 1 of 3
-        </div>
-        <div class="col-1-of-3">
-          col 1 of 3
-        </div>
-        <div class="col-1-of-3">
-          col 1 of 3
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-1-of-3">
-          col 1 of 3
-        </div>
-        <div class="col-2-of-3">
-          col 2 of 3
-        </div>
-      </div>
-        <div class="row">
-          <div class="col-1-of-4">
-            col 1 of 4
-          </div>
-          <div class="col-1-of-4">
-            col 1 of 4
-          </div>
-          <div class="col-1-of-4">
-            col 1 of 4
-          </div>
-          <div class="col-1-of-4">
-            col 1 of 4
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-1-of-4">
-            col 1 of 4
-          </div>
-          <div class="col-1-of-4">
-            col 1 of 4
-          </div>
-          <div class="col-2-of-4">
-            col 2 of 4
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-1-of-4">
-            col 1 of 4
-          </div>
-          <div class="col-3-of-4">
-            col 3 of 4
-          </div>
-        </div>
-      </div>
-    </section>  -->
   </body>
 </html>

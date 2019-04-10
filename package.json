@@ -4,7 +4,14 @@
   "description": "Landing page for natours",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.css -w",
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "concat:css": "concat -o css/style.concat.css css/icon-font.css css/style.comp.css",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.concat.css -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css  css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass concat:css concat:css prefix:css compress:css",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
@@ -12,7 +19,9 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
+    "autoprefixer": "^9.5.1",
     "babel-eslint": "^9.0.0",
+    "concat": "^1.0.3",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.1.0",
@@ -24,6 +33,8 @@
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "^1.6.0",
     "node-sass": "^4.11.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.2",
     "prettier": "^1.16.4"
   }
 }
